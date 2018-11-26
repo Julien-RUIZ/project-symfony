@@ -1,0 +1,32 @@
+{# remplace le include header + includer footer etc + nous permet de définir des blocks à remplir #}
+{% extends '@App/base/base.html.twig' %}
+
+
+
+{% block content %}
+
+    <div id="Titre2"><h2>C'est beau non?</h2></div>
+    <div class="container">
+        <div class="row cadre">
+{#ci-dessous nous avons un boucle for, qui va nous generer trois images et textes#}
+            {% for article in articles %}
+{#on utilise bootstrap, c est pour cela que nous définissons un col-4 pour 3fois la boucle, donc 12 #}
+                <div id="imageText" class="col-4">
+                    <div>
+
+                        <a href=""><img src="{{ asset(article.image) }}" alt="image" class="img" ></a>
+                    </div>
+                    <div>
+                        <p>{{ article.texte }}</p>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div id="Titre2"><h2>Une autre image, pas mal</h2></div>
+   <div id="foret" class="img"><img src="{{ asset('img/foret.jpeg') }}" alt="foret"></div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends '@App/base/base.html.twig' %}
+
+{% block content %}
+<div id="imagefond">
+
+
+        <header>
+            <div id="titre">
+                <h1>Formulaire</h1>
+                <h3>Contactez vous</h3>
+            </div>
+        </header>
+{#Déclaration du formulaire , action qui va etre notre page d'envoi des données, avec la methode post#}
+        <form action="PageController.php" method="post" id="form">
+
+            <label for="nom">Nom</label>
+            <input name="nom" type="text"><br>
+
+            <label for="prenom">Prenom</label>
+            <input name="prenom" type="text"><br>
+
+            <label for="Password">Password</label>
+            <input name="Password" type="text"><br>
+
+            <label for="text">Laisser un message</label>
+            <textarea name="text" id="infoperso" cols="30" rows="10"></textarea>
+
+            <input type="submit">
+
+        </form>
+
+</div>
+{% endblock %}

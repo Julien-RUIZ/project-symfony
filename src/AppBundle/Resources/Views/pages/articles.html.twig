@@ -1,0 +1,30 @@
+{% extends '@App/base/base.html.twig' %}
+
+
+{#page article, ci-dessous #}
+{% block content %}
+    <div id="Titre2"><h2>Hooooo c est très très beau</h2></div>
+    <div class="container">
+        <div class="row cadre">
+{#dessous une boucle pour le tableau ou array 1 que nous allons afficher#}
+            {% for article in articles %}
+
+
+{#utilisation de bootstrap, col-4 avec un container, donc marge en left et right #}
+                <div id="imageText1" class="col-4">
+                    <div>
+                        <img src="{{ asset(article.image) }}" alt="image" class="img">
+                    </div>
+                    <div>
+                        <a href="{{ path('info_article', {'id': article.id}) }}"><p>{{ article.texte }}</p></a>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div id="Titre2"><h2>Vous etes ici !!, non je plaisante ;)</h2></div>
+    <div id="carte"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.9220454145284!2d-0.5810710846103881!3d44.843520882663874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5527dc3f618e6d%3A0xacfc76da5d346144!2sCours+Georges+Clemenceau%2C+33000+Bordeaux!5e0!3m2!1sfr!2sfr!4v1542748098127" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+{% endblock %}
